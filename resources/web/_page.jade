@@ -1,0 +1,17 @@
+doctype html
+html(class="")
+	head
+		block head
+			meta(name="viewport" content="width=device-width, initial-scale=1, user-scalable=no")
+			meta(name="apple-mobile-web-app-capable" content="yes")
+			meta(name="apple-mobile-web-app-status-bar-style" content="black")
+			meta(charset="UTF-8")
+
+			base(href='/')
+			script(src='../../include-all.js')
+	body.show-on-ready
+		block before-body
+		block body
+		block after-body
+	block scripts
+		//pre

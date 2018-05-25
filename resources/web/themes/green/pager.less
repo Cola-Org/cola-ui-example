@@ -1,0 +1,76 @@
+@import "../../_global.less";
+
+.ui.pager {
+	padding: 4px 0px;
+	display: block;
+	background-color: #fff;
+	> div {
+		display: inline-block;
+		margin: 0 4px;
+	}
+	> .page-no-wrapper {
+		span {
+			margin: 0 2px;
+			padding: 4px 6px;
+			display: inline-block;
+			text-align: center;
+			min-width: 28px;
+			line-height: 18px;
+			&.separator {
+				font-family: cola-font;
+				color: @fontColor;
+				opacity: 0.6;
+				&:before {
+					content: "\e62f";
+				}
+			}
+			cursor: pointer;
+			&.nav-btn {
+				font-family: cola-font;
+				&:before {
+					.transform(scale(0.7, 0.7));
+				}
+				&.prev {
+					&:before {
+						content: "\e7f7";
+					}
+				}
+				&.next {
+					&:before {
+						content: "\e630";
+					}
+				}
+				&.disabled {
+					opacity: 0.5;
+					color: #818181;
+				}
+			}
+		}
+	}
+
+	> .goto {
+		input {
+			width: 4.5em;
+			text-align: center;
+			border-radius: 4px;
+			padding: 4px 6px 4px 16px;
+			line-height: 18px;
+			margin: 0 4px;
+		}
+	}
+	.ui.input.drop.page-size {
+		margin: 0 8px;
+		display: inline-block;
+		input {
+			line-height: 18px;
+			width: 7em;
+		}
+	}
+	&.empty {
+		> .goto, .ui.input.page-size {
+
+			display: none;
+
+		}
+	}
+}

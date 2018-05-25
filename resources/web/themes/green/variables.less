@@ -1,0 +1,121 @@
+@import "../../_est/all.less";
+
+@bodyBackgroundColor: #E0E3E2;
+@fontSize: 12px;
+@fontColor: rgb(75, 78, 78);
+@tableHeadFontColor: #2a2a2a;
+@white: #FFFFFF;
+@tableContentFontColor: @fontColor;
+@menuFontColor: #808080;
+@priceColor: @darkPrimaryColor;
+@disabledPriceColor: @descriptionFontColor;
+
+@borderColor: #D9D9D9;
+@border: 1px solid @borderColor;
+@borderRadius: 2px;
+@dividerBorderColor: @borderColor;
+
+@itemsViewItemStripedBackground: darken(@white, 2.5%);
+
+@tipBarBackgroundColor: #FFEBB2;
+
+@header-bar-height: 38px;
+
+@buttonBackgroundColor: #F5F5F5;
+@lightButtonBackgroundColor: fade(@buttonBackgroundColor, 70%);
+@darkButtonBackgroundColor: darken(@buttonBackgroundColor, 7%);
+
+@buttonPrimaryBackgroundColor: #009966;
+@lightButtonPrimaryBackgroundColor: fade(@buttonPrimaryBackgroundColor, 70%);
+@darkButtonPrimaryBackgroundColor: darken(@buttonPrimaryBackgroundColor, 7%);
+
+/* 主色调定义 */
+@primaryColor: #009966;
+@lightPrimaryColor: fade(@primaryColor, 80%);
+@darkPrimaryColor: darken(@primaryColor, 6%);
+
+@secondaryColor: #FA4E3E;
+@lightSecondaryColor: lighten(@secondaryColor, 20%);
+@darkSecondaryColor: darken(@secondaryColor, 20%);
+
+@tertiaryColor: #293846;
+@lightTertiaryColor: lighten(@tertiaryColor, 4%);
+@darkTertiaryColor: darken(@tertiaryColor, 8%);
+
+@fourthlyColor: #23c6c8;
+@lightFourthlyColor: lighten(@fourthlyColor, 4%);
+@darkFourthlyColor: darken(@fourthlyColor, 8%);
+
+@fifthlyColor: rgb(51, 122, 183);
+@lightFifthlyColor: lighten(@fifthlyColor, 10%);
+@darkFifthlyColor: darken(@fifthlyColor, 15%);
+
+/* 文字内容色调定义 */
+@invertedFontColor: rgba(255, 255, 255, 0.9);
+
+@linkFontColor: rgb(51, 122, 183);
+@primaryColorLinkFontColor: @linkFontColor;
+@secondaryLinkFontColor: rgb(35, 198, 200);
+@tertiaryLinkFontColor: @lightPrimaryColor;
+
+@descriptionFontColor: fadeout(@fontColor, 30%);
+@secondaryDescriptionFontColor: fadeout(@primaryColor, 40%);
+@tertiaryDescriptionFontColor: fadeout(@secondaryColor, 40%);
+/* 背景色调定义 */
+@backgroundColor: #F2F4F5;
+@contentBackgroundColor: #fff;
+@lightBackgroundColor: lighten(@backgroundColor, 3%);
+@darkBackgroundColor: darken(@backgroundColor, 3%);
+@activeBackgroundColor: #ededed;
+
+/* 边框色调定义 */
+@dividerBorderColor: rgba(0, 0, 0, 0.10);
+@lightDividerBorderColor: #ededed;
+
+@lightBorderColor: @lightDividerBorderColor;
+
+/* 主题色定义 */
+//@positiveColor: #7ed321;
+@positiveColor: @primaryColor;
+@positiveBackgroundColor: fade(@positiveColor, 10%);
+@positiveBorderColor: @positiveColor;
+@positiveHeaderColor: #1A531B;
+@positiveTextColor: #2C662D;
+
+@negativeColor: #Fa4332;
+@negativeBackgroundColor: fade(@negativeColor, 10%);
+@negativeBorderColor: @negativeColor;
+@negativeHeaderColor: @negativeColor;
+@negativeTextColor: #ed5565;
+
+@infoColor: #3b8EEE;
+@infoBackgroundColor: fade(@infoColor, 10%);
+@infoBorderColor: @infoColor;
+@infoHeaderColor: #0E566C;
+@infoTextColor: #276F86;
+
+@warningColor: #ffaa00;
+@warningBackgroundColor: fade(@warningColor, 10%);
+
+@warningBorderColor: @warningColor;
+@warningHeaderColor: #794B02;
+@warningTextColor: #573A08;
+
+@nprogressColor: @primaryColor;
+
+@subtleShadow: 0px 1px 2px 0 @borderColor;
+@floatingShadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+@blockShadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.1);
+.block-shadow() {
+	-webkit-box-shadow: @blockShadow;
+	-moz-box-shadow: @blockShadow;
+	box-shadow: @blockShadow;
+}
+
+@tableBorderColor: #BFBFBF;
+@tableHeadFillBackgroundColor: #F2F7F7;
+@tableHoverItemBackgroundColor: #F2FAF7;
+@tableCurrentItemBackgroundColor: #C8E6DB;
+@tableHeadFontColor: @fontColor;
+@tableContentFontColor: @fontColor;
+@tableItemPadding: 8px 4px 8px 6px;

@@ -1,0 +1,18 @@
+@import "../../_global.less";
+
+message, messages {
+	&.warn {
+		&:before {
+			content: "\e645";
+			font-family: cola-font;
+		}
+		color: @warningColor;
+	}
+	&.error {
+		&:before {
+			content: "\e63a";
+			font-family: cola-font;
+		}
+		color: @negativeColor;
+	}
+}

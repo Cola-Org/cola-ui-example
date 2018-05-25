@@ -1,0 +1,30 @@
+@import "../../_global.less";
+
+.ui.menu.navbar {
+	background-color: #FFFFFF;
+	.item {
+		padding: 14px 14px;
+		border-radius: 0px;
+		margin: 0;
+		font-size: 14px;
+	}
+	.header.item {
+		font-weight: 400;
+		font-size: 16px;
+		padding: 12px 14px;
+	}
+	.right.menu {
+		> .item:not(:last-of-type) {
+			border-right: 1px solid @borderColor;
+		}
+	}
+
+	.primary.item {
+		background-color: @positiveColor;
+	}
+	border-bottom: 1px solid @borderColor;
+}
+
+
+
+

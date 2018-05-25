@@ -1,0 +1,153 @@
+@import "../../_global.less";
+
+
+.ui.widget-table {
+	border: 1px solid @tableBorderColor;
+	background-color: #fff;
+	table {
+		thead {
+			th {
+				padding: @tableItemPadding;
+				background-color: @tableHeadFillBackgroundColor;
+				color: @tableHeadFontColor;
+				border: none;
+				> div {
+					line-height: 18px;
+					padding: 0;
+					overflow: visible;
+				}
+			}
+		}
+		tbody {
+			td {
+				color: @tableContentFontColor;
+				padding: 0px;
+				border: none;
+				> div {
+					padding: @tableItemPadding;
+					line-height: 18px;
+					input {
+						border-color: transparent;
+						background: transparent;
+						color: @tableContentFontColor;
+						&:focus {
+							background: #fff;
+							border-width: 1px;
+							border-radius: 4px;
+						}
+					}
+
+				}
+			}
+			tr {
+				border-bottom: 1px solid @tableBorderColor;;
+			}
+		}
+		.ui.checkbox.in-cell {
+			margin: 0 0 0 0;
+			display: inline;
+			> label {
+				&:before, &:after {
+					left: 10px;
+				}
+			}
+		}
+	}
+
+	table tbody tr:last-child td {
+		border-bottom-color: transparent;
+	}
+
+	table thead tr:first-child th {
+		border-bottom: 1px solid @tableBorderColor;
+	}
+	.table.item:hover:not(.current) {
+		background-color: @tableHoverItemBackgroundColor;
+	}
+
+	table thead th.sortable > div {
+		padding-right: 1.5em !important;
+		&:after {
+			margin-top: -0.7em;
+			top: 50%;
+			right: 0.75em;
+		}
+	}
+
+	&.striped {
+		.table.item.current {
+			background-color: @tableCurrentItemBackgroundColor;
+		}
+		.table.item:nth-of-type(2n):not(.current) {
+			background: @itemsViewItemStripedBackground;
+			&:hover {
+				background: @itemsViewItemStripedBackground;
+			}
+		}
+	}
+
+	&.loose {
+		table {
+			thead th, tbody td {
+				padding: 11px 4px 11px 6px;
+			}
+		}
+	}
+
+	&.basic {
+		table {
+			thead {
+				th {
+					background-color: transparent;
+				}
+			}
+		}
+	}
+
+	&.bordered {
+		table {
+			thead {
+				th {
+					border: 1px solid @tableBorderColor;
+				}
+			}
+			tbody {
+				td {
+					border: 1px solid @tableBorderColor;
+				}
+				tr {
+					border-bottom: none;
+				}
+			}
+		}
+
+		table tbody tr:last-child td {
+			border-bottom-color: @tableBorderColor;
+		}
+
+		table thead tr:first-child th {
+			border-bottom: 1px solid @tableBorderColor;
+		}
+		border: none;
+		.table.item:nth-of-type(odd):not(.current) {
+			background: transparent;
+			&:hover {
+				background: @itemsViewItemStripedBackground;
+			}
+		}
+	}
+
+	&.editable {
+		table {
+			tbody {
+				td {
+					padding: 0px;
+					> div {
+						padding: 2px 4px;
+					}
+				}
+			}
+		}
+	}
+}
+
