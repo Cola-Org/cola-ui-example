@@ -1,0 +1,26 @@
+extends ../layout
+
+block body
+	c-button(caption="显示" click="show")
+	c-dialog#dialog1
+		.header
+			.caption 账号信息
+		.content(style="height:80px")
+			h2 1
+			h2 2
+			h2 3
+			h2 4
+		.actions
+			c-button.primary(caption="保存")
+			c-button(caption="取消")
+
+append scripts
+	script.
+		cola(function (model) {
+			model.action({
+				show: function () {
+					cola.widget("dialog1").show();
+				}
+			})
+		});
+
