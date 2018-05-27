@@ -2,16 +2,29 @@ extends ../layout
 
 block body
 	c-button(caption="显示" click="show")
+
+
+	c-form
+		fields.cols-2
+			field
+				label 名称
+				c-input
+			field
+				label 昵称
+				c-input
+		field
+			label 备注
+			c-textarea
 	c-dialog#dialog1
 		.header
 			.caption 账号信息
-		.content(style="height:80px")
-			h2 1
-			h2 2
-			h2 3
-			h2 4
+		.content
+			c-form
+				field
+					label 名称
+					c-input
 		.actions
-			c-button.primary(caption="保存")
+			c-button.primary(icon="save" caption="保存")
 			c-button(caption="取消")
 
 append scripts
