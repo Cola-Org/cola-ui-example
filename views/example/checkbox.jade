@@ -1,0 +1,15 @@
+extends ../layout
+
+block body
+	c-checkbox(label="只显示在使用公司" bind="unexpired")
+	c-checkbox.toggle(label="只显示在使用公司" bind="unexpired" )
+	c-checkbox.slider(label="只显示在使用公司" bind="unexpired")
+append scripts
+	script.
+		cola(function (model) {
+			model.action({
+				alert: function () {
+					cola.alert("系统弹出框");
+				}
+			})
+		});

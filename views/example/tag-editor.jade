@@ -1,0 +1,18 @@
+extends ../layout
+
+block body
+	c-button(caption="主按钮" click="alert")
+	c-tag-editor(bind="coinsCode" items="bFlag")
+append scripts
+	script.
+		cola(function (model) {
+			model.set("coinsCode", []);
+			model.set("bFlag", [
+				{key: "1", value: "选项1"},
+				{key: "2", value: "选项2"},
+				{key: "3", value: "选项3"},
+				{key: "4", value: "选项4"},
+				{key: "5", value: "选项5"},
+				{key: "6", value: "选项6"}
+			]);
+		});

@@ -1,4 +1,13 @@
 extends ../layout
 
 block body
-	c-button(caption="主按钮")
+	c-button(caption="主按钮" click="alert")
+append scripts
+	script.
+		cola(function (model) {
+			model.action({
+				alert: function () {
+					cola.alert("系统弹出框");
+				}
+			})
+		});
