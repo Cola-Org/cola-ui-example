@@ -1,0 +1,18 @@
+extends ../layout
+
+block body
+	c-button(caption="显示" click="show")
+
+	c-sidebar#sidebar1(style="background: green")
+		| text
+
+append scripts
+	script.
+		cola(function (model) {
+			model.action({
+				show: function () {
+					cola.widget("sidebar1").show();
+				}
+			})
+		});
+

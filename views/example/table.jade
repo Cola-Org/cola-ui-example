@@ -1,0 +1,58 @@
+extends ../layout
+
+append head
+	style.
+		.ui.items-view.widget-table .table-body > .items {
+			list-style-type: none;
+			counter-reset: sectioncounter;
+		}
+
+		.ui.items-view.widget-table .table-body > .items .row-index:before {
+			content: counter(sectioncounter);
+			counter-increment: sectioncounter;
+		}
+
+block body
+	c-button(click="filter") Filter
+
+	c-table#table1(bind="items" sortMode="local" selectedProperty="$selected" renderItem="renderItem"
+	leftFixedCols="1" changeCurrentItem="false")
+		column
+			template
+				.row-index
+		select-column
+		column(property="column1" sortable="true")
+		column(property="$selected")
+		column(property="column3")
+		column(property="column4")
+		column(property="column5")
+		column(property="column6")
+		column(property="column7")
+		column(property="column1")
+		column(property="column8")
+		column(property="column9")
+		column(property="column10" width="200")
+
+append scripts
+	script.
+		cola(function (model) {
+			var items = [];
+			for (var i = 0; i < 30; i++) {
+				var item = {};
+				items.push(item);
+				for (j = 0; j < 16; j++) {
+					item["column" + j] = i + "," + j;
+				}
+			}
+
+			model.set("items", items);
+
+			model.action({
+				filter: function (self, arg) {
+					cola.widget("table1").set("items", model.get("items").filter({$selected: "true"}));
+				},
+				renderItem: function (self, arg) {
+					// console.log(arg.item.get("column1"));
+				}
+			});
+		});

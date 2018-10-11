@@ -1,0 +1,25 @@
+extends ../layout
+
+block body
+	c-input(bind="employee.num" displayFormat="#,##0.00")
+
+append scripts
+	script.
+		cola(function (model) {
+			model.dataType({
+				name: "Employee",
+				properties: {
+					num: {
+						validators: [function(num) {
+							debugger
+							console.log("validator: " + num);
+						}]
+					}
+				}
+			});
+
+			model.describe("employee", "Employee");
+			model.set("employee", {
+				num: 123
+			});
+		});
