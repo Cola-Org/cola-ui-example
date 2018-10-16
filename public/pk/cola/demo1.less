@@ -1,0 +1,50 @@
+body {
+	margin: 20px;
+}
+
+.band {
+	margin-bottom: 32px;
+	.title {
+		font-size: 150%;
+		margin: 16px;
+	}
+}
+
+.color-block {
+	display: inline-block;
+	width: 200px;
+	padding: 12px;
+	margin: 6px;
+	c-checkbox {
+		position: relative;
+		top: 3px;
+	}
+	i.icon.trash {
+		margin-left: 8px;
+		opacity: 0.5;
+		&:hover {
+			opacity: 1;
+		}
+	}
+
+	&.selected {
+		background-color: lavender;
+	}
+}
+
+.image-block {
+	display: inline-block;
+	width: 120px;
+	margin: 6px;
+	text-align: center;
+	.placeholder {
+		height: 120px;
+		line-height: 120px;
+		border: 1px solid #ebebeb;
+		box-sizing: border-box;
+		color: #898989;
+	}
+	.name {
+		padding: 12px;
+	}
+}

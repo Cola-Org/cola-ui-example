@@ -1,0 +1,32 @@
+extends ../../layout
+
+append head
+	link(rel="stylesheet" href="demo1.css")
+
+block body
+	.band
+		.title 颜色规格
+		.color-block(c-repeat="color in colors" c-class="selected:color.selected")
+			c-checkbox(bind="color.selected")
+			c-input(bind="color.name" placeholder="请输入颜色" postOnInput="true")
+			i.icon.trash(c-onclick="deleteColor(color)")
+
+		.color-block
+			c-button(icon="add" click="addColor") 添加颜色
+
+	.band
+		.title 规格图片
+		.image-block(c-repeat="color in getSelectedColors(colors)")
+			.placeholder 点击上传图片
+			.name(c-bind="default(color.name,'<未输入>')")
+
+	.band
+		.title 库存价格表
+		c-table(bind="color in getSelectedColors(colors)" dataType="Color" readonly="false" width="400")
+			column(width="30" bind="$index" readonly="true" caption="#" align="center")
+			column(property="name")
+			column(property="num")
+			column(property="price")
+
+append scripts
+	script(src="demo1.js")
