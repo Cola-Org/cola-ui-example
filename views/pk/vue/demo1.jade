@@ -1,0 +1,24 @@
+doctype html
+html
+	head
+		link(rel="stylesheet" href="demo1.css")
+		script(src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js")
+	body
+		#app.content
+			.band
+				.title 颜色规格
+				.color-block(v-for="color in colors" v-bind:class="{ selected: color.selected }")
+					input(type="checkbox" v-model="color.selected")
+					input(v-model="color.name" placeholder="请输入颜色")
+					.delete(@click="deleteColor(color)") X
+
+				.color-block
+					button(@click="addColor") 添加颜色
+
+			.band
+				.title 规格图片
+				.image-block(v-for="color in selectedColors")
+					.placeholder 点击上传图片
+					.name {{ color.name ? color.name : '<未输入>' }}
+
+		script(src="demo1.js")

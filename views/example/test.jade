@@ -1,0 +1,45 @@
+extends ../layout
+
+block body
+	c-button(caption="doSomethingElse" click="doSomethingElse")
+	c-table.bordered( dataType="AAA" bind="filter(list)" )
+		column( property="aaa" caption="no1")
+			template
+				c-input(bind="$default")
+		column( property="bbb" caption="no2")
+			template
+				c-input(bind="$default")
+append scripts
+	script.
+		cola(function (model) {
+			model.dataType({
+				name: "AAA",
+				properties: [
+					{
+						property: "aaa",
+						dataType: "number"
+					},
+					{
+						property: "bbb",
+						dataType: "number"
+
+					}
+				]
+			});
+			model.describe("list", "AAA");
+			model.set("list", []);
+			model.action({
+				filter: function (items) {
+					var a = [];
+					items.each(function (item) {
+						a.push(item);
+					});
+					return a;
+				},
+				doSomethingElse: function () {
+					model.get("list").insert({"aaa": null, "bbb": null});
+				}
+			});
+
+
+		});

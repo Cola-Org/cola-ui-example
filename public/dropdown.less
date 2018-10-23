@@ -1,0 +1,144 @@
+.ui.form, c-form {
+  padding: 0.75rem 0;
+  field, fields > field {
+    > label {
+      min-width: 10em;
+      max-width: 10em;
+    }
+
+    min-height: 4em;
+    padding: 6px 0;
+
+    > .ui.input, > .ui.textarea, > .ui.tag-editor, .content {
+      margin-right: 28px;
+    }
+    > .ui.tag-editor {
+      width: ~'calc(100% - 12em)';
+    }
+
+    &.required > label:after {
+      display: inline-block;
+      line-height: 1.5em;
+    }
+
+    message {
+      background: transparent !important;
+      box-shadow: none !important;
+    }
+  }
+  > fields.bordered {
+    margin-top: 10px;
+    border-top: 1px solid #E0E2E2;
+    padding-top: 10px;
+
+  }
+  border: black;
+  background-color: #F7F9F9;
+
+  &.transparent {
+    border: none;
+    background-color: transparent;
+  }
+
+  &.transparent {
+    border: none;
+    background-color: transparent;
+  }
+
+  message {
+    margin-left: -30px !important;
+  }
+}
+
+@inputFontWeight: 400;
+@inputReadOnlyBackgroundColor: #ebebeb;
+
+.ui.input {
+  > input, > .button, > .ui.label {
+    padding: 6px 8px;
+  }
+
+  > input {
+    color: fade(black, 90%);
+    border-color: black;
+    border-radius: black;
+  }
+
+  &.focused:not(.readonly), &.drop.opened {
+    > input {
+      border-color: red;
+    }
+  }
+
+  &.error {
+    > input {
+      border-color: black;
+      color: fade(black, 90%);
+    }
+    &.focused > input {
+      border-color: black;
+    }
+  }
+
+  > .ui.label {
+    font-weight: 400;
+  }
+
+  &.drop {
+    > .filter-input {
+      padding: 5px 0 5px 1px !important;
+      top: 1px;
+      bottom: 1px;
+    }
+    > .value-content {
+      left: 12px;
+      top: 8px;
+      bottom: 6px;
+    }
+  }
+}
+
+.ui.drop-box {
+  border-color: black;
+}
+
+.ui.date.input.drop {
+  .calendar.icon {
+    font-family: cola-font;
+    font-size: 14px;
+    &:before {
+      content: "\e61c";
+    }
+  }
+}
+
+.ui.input {
+  &.icon {
+    input {
+      padding-right: 2em !important;
+    }
+    > i.icon {
+      width: 2em !important;
+    }
+  }
+  &.drop {
+    > .value-content {
+      padding-right: 2em !important;
+    }
+    > i.icon {
+      &.remove {
+        width: 2em;
+        right: 1.5em;
+        font-family: cola-font;
+        color: rgba(0, 0, 0, 0.5);
+        &:before {
+          content: '\e63a';
+        }
+      }
+    }
+  }
+}
+
+.ui.tag-editor {
+  min-height: 28px;
+}

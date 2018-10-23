@@ -1,0 +1,52 @@
+extends ../layout
+
+append head
+	link(rel="stylesheet" href="/dropdown.css")
+
+block body
+	c-input(bind="key")
+	c-input(bind="value")
+
+	br
+
+	c-dropdown(filterable="false" c-items="items" bind="value" textProperty="value"
+		valueProperty="key" showClearButton="false")
+		//template(name="value-content")
+		//	li(c-bind="'-'+item.value")
+		//template(name="item-content")
+		//	li(c-bind="'#'+item.key+'-'+item.value")
+
+	c-dropdown(filterable="false" c-items="items" textProperty="value" bind="data.b" assignment="a=key;b=value")
+
+	br
+
+	//c-combo-box(c-items="items" bind="value")
+
+append scripts
+	script.
+		cola(function (model) {
+			var items = [
+				{
+					key: "a",
+					value: "A"
+				},
+				{
+					key: "b",
+					value: "B"
+				},
+				{
+					key: "c",
+					value: "C"
+				},
+				{
+					key: "d",
+					value: "D"
+				}
+			];
+
+			model.set("key", "b");
+			model.set("value", "b");
+
+			model.set("data", {});
+			model.set("items", items);
+		});
