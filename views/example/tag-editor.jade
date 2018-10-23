@@ -3,6 +3,7 @@ extends ../layout
 block body
 	c-button(caption="主按钮" click="alert")
 	c-tag-editor(bind="coinsCode" items="bFlag")
+	c-monthpicker(bind="month")
 append scripts
 	script.
 		cola(function (model) {
